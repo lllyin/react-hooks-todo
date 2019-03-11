@@ -2,7 +2,7 @@
 
 ## usage
 
-1. `https://github.com/Andesome/react-hooks-todo.git`
+1. `git clone https://github.com/Andesome/react-hooks-todo.git`
 
 2. `cd react-hooks-todo`
 
