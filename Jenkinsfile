@@ -1,30 +1,27 @@
 pipeline {
     agent { docker 'node:8.12' }
+    environment {
+       NGINX_HOME = '/Users/ling/nginx/html'
+   }
     stages {
-        stage('echo') { 
+        stage('prepare') { 
             steps {
-                sh 'pwd' 
                 sh 'echo $WORKSPACE'
+                sh 'tar -zcvf node_modules.tar.gz $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules"'
+                sh 'cp  $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules.tar.gz" ./'
+                sh 'tar -zxcvf ./node_modules.tar.gz'
             }
         }
-        stage('compress') { 
+        stage('build') { 
             steps {
-                sh 'tar -zcvf src.tar.gz ./src' 
+                sh 'npm run build' 
             }
         }
-        stage('copy') { 
+        stage('deploy') { 
             steps {
-                sh 'cp ./src.tar.gz ./src2.tar.gz' 
-            }
-        }
-         stage('absolute-copy') { 
-            steps {
-                sh 'cp $WORKSPACE"/src.tar.gz" /usr/share/nginx/html/src.tar.gz' 
-            }
-        }
-        stage('cat') { 
-            steps {
-                sh 'cat ./package.json' 
+                sh 'tar -zcvf build.tar.zip ./build'
+                sh 'rm -rf $NGINX_HOME"/react-hooks-todo" && mkdir $NGINX_HOME"/react-hooks-todo"'
+                sh 'cp ./build.tar.zip $NGINX_HOME"/react-hooks-todo"' 
             }
         }
     }
