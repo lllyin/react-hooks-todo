@@ -14,7 +14,7 @@ pipeline {
         }
         stage('copy') { 
             steps {
-                sh 'cp ./src.tar.gz /home/src.tar.gz' 
+                sh 'cp ./src.tar.gz ./src2.tar.gz' 
             }
         }
         stage('cat') { 
