@@ -1,14 +1,14 @@
 pipeline {
     agent { docker 'node:8.12' }
     environment {
-       NGINX_HOME = '/Users/ling/nginx/html'
+       NGINX_HOME = '/usr/share/nginx/html'
    }
     stages {
         stage('prepare') { 
             steps {
                 sh 'echo $WORKSPACE'
+                sh 'echo $NGINX_HOME'
                 sh 'tar -zcvf node_modules.tar.gz $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules"'
-                sh 'cp  $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules.tar.gz" ./'
                 sh 'tar -zxcvf ./node_modules.tar.gz'
             }
         }
