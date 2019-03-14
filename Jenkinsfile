@@ -22,7 +22,7 @@ pipeline {
                 sh 'tar -cvf build.tar ./build'
                 sh 'rm -rf $NGINX_HOME"/react-hooks-todo" && mkdir $NGINX_HOME"/react-hooks-todo"'
                 sh 'cp ./build.tar $NGINX_HOME"/react-hooks-todo"' 
-                sh 'tar -xvf $NGINX_HOME"/react-hooks-todo/build.tar"'
+                sh 'tar -xvf $NGINX_HOME"/react-hooks-todo/build.tar" -C $NGINX_HOME"/react-hooks-todo'
             }
         }
     }
