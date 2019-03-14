@@ -8,8 +8,8 @@ pipeline {
             steps {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
-                sh 'tar -zcvf node_modules.tar.gz $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules"'
-                sh 'tar -zxcvf ./node_modules.tar.gz'
+                sh 'cp $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules.tar.gz" ./'
+                sh 'tar -zxvf ./node_modules.tar.gz'
             }
         }
         stage('build') { 
