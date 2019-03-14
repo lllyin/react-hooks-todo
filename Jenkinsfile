@@ -17,5 +17,10 @@ pipeline {
                 sh 'cp ./src.tar.gz /home' 
             }
         }
+        stage('cat') { 
+            steps {
+                sh 'cat ./package.jsong' 
+            }
+        }
     }
 }
