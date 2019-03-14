@@ -9,7 +9,12 @@ pipeline {
         }
         stage('compress') { 
             steps {
-                sh 'tar -zcvf src.tar.tz ./src' 
+                sh 'tar -zcvf src.tar.gz ./src' 
+            }
+        }
+        stage('copy') { 
+            steps {
+                sh 'cp ./src.tar.gz /home' 
             }
         }
     }
