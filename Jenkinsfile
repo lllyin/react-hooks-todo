@@ -1,14 +1,14 @@
 pipeline {
     agent { docker 'node:8.12' }
     stages {
-        stage('install') { 
+        stage('echo') { 
             steps {
-                sh 'npm install' 
+                sh 'pwd' 
             }
         }
-        stage('build') { 
+        stage('compress') { 
             steps {
-                sh 'npm run build' 
+                sh 'tar -zcvf src.tar.tz ./src' 
             }
         }
     }
