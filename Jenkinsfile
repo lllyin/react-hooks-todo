@@ -4,6 +4,7 @@ pipeline {
         stage('echo') { 
             steps {
                 sh 'pwd' 
+                sh 'echo $WORKSPACE'
             }
         }
         stage('compress') { 
