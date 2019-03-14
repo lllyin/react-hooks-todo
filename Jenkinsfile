@@ -19,7 +19,7 @@ pipeline {
         }
          stage('absolute-copy') { 
             steps {
-                sh 'cp $WORKSPACE"/src.tar.gz" /Users/ling/Documents/src.tar.gz' 
+                sh 'cp $WORKSPACE"/src.tar.gz" /usr/share/nginx/html/src.tar.gz' 
             }
         }
         stage('cat') { 
