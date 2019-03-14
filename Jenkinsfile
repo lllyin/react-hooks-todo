@@ -19,7 +19,7 @@ pipeline {
         }
         stage('cat') { 
             steps {
-                sh 'cat ./package.jsong' 
+                sh 'cat ./package.json' 
             }
         }
     }
