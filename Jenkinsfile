@@ -17,9 +17,9 @@ pipeline {
                 sh 'cp ./src.tar.gz ./src2.tar.gz' 
             }
         }
-         stage('docker-copy') { 
+         stage('absolute-copy') { 
             steps {
-                sh 'docker cp jenkins_node3:$WORKSPACE"/src.tar.gz" /Users/ling/Documents/src.tar.gz' 
+                sh 'cp jenkins_node3:$WORKSPACE"/src.tar.gz" /Users/ling/Documents/src.tar.gz' 
             }
         }
         stage('cat') { 
