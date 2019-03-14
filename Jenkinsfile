@@ -8,13 +8,13 @@ pipeline {
             steps {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
-                sh 'cp $NGINX_HOME"/node_tools/react-hooks-todo_cd-docker/node_modules.tar" ./'
-                sh 'tar -xvf ./node_modules.tar'
+                sh 'npm install yarn -g'
+                sh 'yarn install --registry=https://registry.npm.taobao.org'
             }
         }
         stage('build') { 
             steps {
-                sh 'npm run build' 
+                sh 'yarn run build' 
             }
         }
         stage('deploy') { 
