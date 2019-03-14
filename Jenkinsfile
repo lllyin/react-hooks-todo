@@ -19,7 +19,7 @@ pipeline {
         }
          stage('absolute-copy') { 
             steps {
-                sh 'cp jenkins_node3:$WORKSPACE"/src.tar.gz" /Users/ling/Documents/src.tar.gz' 
+                sh 'cp $WORKSPACE"/src.tar.gz" /Users/ling/Documents/src.tar.gz' 
             }
         }
         stage('cat') { 
