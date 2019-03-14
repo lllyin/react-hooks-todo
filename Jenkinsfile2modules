@@ -1,0 +1,26 @@
+pipeline {
+    agent { docker 'node:8.12' }
+    environment {
+       NGINX_HOME = '/usr/share/nginx/html'
+   }
+    stages {
+        stage('prepare') { 
+            steps {
+                sh 'echo $WORKSPACE'
+                sh 'echo $NGINX_HOME'
+                sh 'npm install yarn -g'
+            }
+        }
+        stage('install') { 
+            steps {
+                sh 'yarn install --registry=https://registry.npm.taobao.org' 
+            }
+        }
+        stage('compress') { 
+            steps {
+                sh 'rm -rf $NGINX_HOME"/node_tools/react-hooks-todo" && mkdir $NGINX_HOME"/node_tools/react-hooks-todo"'
+                sh 'tar -cvf $NGINX_HOME"/node_tools/react-hooks-todo/node_modules.tar" ./node_modules'
+            }
+        }
+    }
+}
