@@ -1,5 +1,4 @@
 pipeline {
-    agent { docker 'node:10.15.3' }
     environment {
        NGINX_HOME = '/usr/share/nginx/html'
        HOME = '.'
