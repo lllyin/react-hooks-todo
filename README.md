@@ -18,7 +18,7 @@ end
 ```
 sudo docker run \
     --rm \
-    -d \
+    -dit \
     -u 0 \
     --privileged \
     --name jenkins_node \
