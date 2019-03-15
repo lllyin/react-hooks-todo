@@ -9,7 +9,7 @@ pipeline {
             steps {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
-                sh 'npm install yarn -g'
+                sh 'npm install yarn'
                 sh 'yarn install --registry=https://registry.npm.taobao.org'
             }
         }
