@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { docker 'node:10.15.3' }
     environment {
        NGINX_HOME = '/usr/share/nginx/html'
        HOME = '.'
@@ -9,6 +9,7 @@ pipeline {
             steps {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
+                sh 'npm install yarn -g'
                 sh 'yarn install --registry=https://registry.npm.taobao.org'
             }
         }
