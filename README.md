@@ -53,3 +53,7 @@ sudo docker run \
     如果不挂载，则jenkins所有log、用户配置文件都会在docker容器内，如果容器销毁，则jenkins得重新配置一遍。挂载出来方便jenkins迁移以及管理
 
 查看你宿主机上的的/Users/ling/jenkins_node文件夹,当出现下图所有文件时，则说明jenkins启动成功，否则再等等...30秒左右即可
+
+## 疑问
+
+### 1. 触发构建后jenkins容器经常自动关闭，dokcer ps显示有一个node容器在运行，即agent中的node版本，没找到原因
