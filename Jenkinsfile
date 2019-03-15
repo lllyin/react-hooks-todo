@@ -1,4 +1,5 @@
 pipeline {
+    agent none
     environment {
        NGINX_HOME = '/usr/share/nginx/html'
        HOME = '.'
