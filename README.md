@@ -19,8 +19,7 @@ end
 sudo docker run \
     --rm \
     -dit \
-    -u 0 \
-    --privileged \
+    -u root \
     --name jenkins_node \
     -p 8080:8080 \
     -v /var/run/docker.sock:/var/run/docker.sock \
