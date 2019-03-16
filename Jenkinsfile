@@ -1,8 +1,11 @@
 pipeline {
-    agent none
+    docker {
+        image 'node:8-alpine'
+        args '-p 3000:3000'
+    }
     environment {
        NGINX_HOME = '/usr/share/nginx/html'
-       HOME = '.'
+        CI = 'true'
    }
     stages {
         stage('prepare') { 
@@ -15,7 +18,7 @@ pipeline {
         }
         stage('build') { 
             steps {
-                sh 'yarn run build' 
+                sh './jenkins/scripts/deliver.sh' 
             }
         }
         stage('deploy') { 
