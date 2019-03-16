@@ -15,11 +15,11 @@ pipeline {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
                 sh 'whoami'
-                sh 'npm install yarn --registry=https://registry.npm.taobao.org'
                 sh 'node --version'
                 sh 'npm --version'
-                sh 'yarn install --registry=https://registry.npm.taobao.org'
+                sh 'npm install yarn --registry=https://registry.npm.taobao.org'
                 sh 'yarn --version'
+                sh 'yarn install --registry=https://registry.npm.taobao.org'
             }
         }
         stage('build') { 
