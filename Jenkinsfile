@@ -14,8 +14,8 @@ pipeline {
             steps {
                 sh 'echo $WORKSPACE'
                 sh 'echo $NGINX_HOME'
-                sh 'echo whoami'
-                sh 'npm install  -g yarn --registry=https://registry.npm.taobao.org'
+                sh 'whoami'
+                sh 'npm install yarn --registry=https://registry.npm.taobao.org'
                 sh 'node --version'
                 sh 'npm --version'
                 sh 'yarn install --registry=https://registry.npm.taobao.org'
