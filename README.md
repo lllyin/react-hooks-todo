@@ -10,4 +10,7 @@
 
 4. `yarn start` or `npm start`
 
-end
+## 构建工具
+
+[Teapack](https://github.com/Andesome/teapack)
+> 一个0配置的脚手架工具，开箱即用，保持最少依赖
