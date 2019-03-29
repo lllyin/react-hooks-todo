@@ -24,6 +24,6 @@
   ],
   "devDependencies": {
     "react-hot-loader": "^4.8.0",
-    "teapack": "^0.0.6"
+    "teapack": "^1.0.6"
   }
 }
