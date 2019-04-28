@@ -8717,7 +8717,7 @@ process@~0.5.1:
   resolved "http://registry.npm.taobao.org/process/download/process-0.5.2.tgz#1638d8a8e34c2f440a91db95ab9aeb677fc185cf"
   integrity sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8=
 
-progress@^2.0.0:
+progress@^2.0.0, progress@^2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/progress/download/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha1-foz42PW48jnBvGi+tOt4Vn1XLvg=
@@ -10248,10 +10248,10 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
 
-teapack@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.npmjs.org/teapack/-/teapack-1.0.6.tgz#2838aac3211407f9dcfa853c03886b666f68f630"
-  integrity sha512-/uNE0E8/X8uBZiy3K35ty6kLZZGImLCQ1j13j5q6dE82YIyzPRglhbDty5BsbcHS551SD6QZAgNxIR4OreUovg==
+teapack@@latest:
+  version "1.0.7"
+  resolved "https://registry.npmjs.org/teapack/-/teapack-1.0.7.tgz#79b7b0388dbf7a955eeb38fb2a6cc2227bed4ced"
+  integrity sha512-c2myQZq9mtsuuXOYmRyJyw3U4XfNY2SBDckp+x0Ddtb2eEaUxFTs7sm+2S5xVFCRzsuaZqDBn6JEmrIkdnhr8A==
   dependencies:
     "@babel/core" "^7.3.4"
     "@babel/plugin-proposal-class-properties" "^7.4.0"
@@ -10272,6 +10272,7 @@ teapack@^1.0.6:
     less "^3.9.0"
     less-loader "^4.1.0"
     postcss-loader "^3.0.0"
+    progress "^2.0.3"
     react-dev-utils "^8.0.0"
     style-loader "^0.23.1"
     webpack "^4.29.6"
